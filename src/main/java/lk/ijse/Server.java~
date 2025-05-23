@@ -5,8 +5,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.logging.Handler;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Server {
@@ -30,13 +28,5 @@ public class Server {
         } catch (IOException e) {
             logger.severe("Server error: " + e.getMessage());
         }
-    }
-
-    private static void setupLogger() {
-        Logger rootLogger = Logger.getLogger("");
-        for (Handler handler : rootLogger.getHandlers()) {
-            handler.setLevel(Level.INFO);
-        }
-        logger.setLevel(Level.INFO);
     }
 }
